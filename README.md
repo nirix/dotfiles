@@ -7,7 +7,7 @@ Then clone this repository to your home directory:
 
     git clone git://github.com/nirix/dotfiles.git ~/.dotfiles
 
-Now just `cd .dotfiles` then `zsh install.sh` and you're done.
+Now just `cd .dotfiles` then `zsh install.zsh` and you're done.
 
 ## Using zsh instead of bash all the time
 
