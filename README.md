@@ -1,11 +1,20 @@
-## Things to install
+## What to do
 
-* zsh
+Make sure zsh is installed, OS X users can use [Homebrew](http://mxcl.github.com/homebrew)
+by running `brew install zsh`.
 
-## Using zsh instead of bash
+Then clone this repository to your home directory:
+
+    git clone git://github.com/nirix/dotfiles.git ~/.dotfiles
+
+Now just `cd .dotfiles` then `zsh install.sh` and you're done.
+
+## Using zsh instead of bash all the time
 
 Append `/usr/local/bin/zsh` to `/etc/shells` and run `chsh -s /brew/bin/zsh`
 
-## Setup
+## The 'osx' file
 
-Run `zsh install.sh`, if you want the OS X changes, run `zsh osx`.
+The `osx` file makes changes to the OS X system, open the file to see specifics.
+
+To enable all changes, simply run `zsh osx`.

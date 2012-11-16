@@ -1,6 +1,6 @@
 # Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.prezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.prezto/init.zsh"
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
 # Customize to your needs...
@@ -25,3 +25,6 @@ alias geminst="gem install --no-rdoc --no-ri"
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 10'"
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
+
+# COLORS! YAY!
+export LSCOLORS="GxfxcxdxbxGxDxabagacad"

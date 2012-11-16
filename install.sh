@@ -11,8 +11,8 @@ for rcfile in $HOME/.dotfiles/prezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
 
-###################################
-# Backup and copy custom dot files
+#####################################################
+# Backup/remove original then copy custom dot files
 
 # Gem
 if [ -f "$HOME/.gemrc" ]; then
@@ -21,13 +21,21 @@ fi
 cp ./gemrc "$HOME/.gemrc"
 
 # Zsh
-#if [ -f "$HOME/.zshrc" ]; then
-#  mv "${ZDOTDIR:-$HOME}/.zshrc" "${ZDOTDIR:-$HOME}/.zshrc.back"
-#fi
-#cp ./zshrc "${ZDOTDIR:-$HOME}/.zshrc"
+if [ -f "${ZDOTDIR:-$HOME}/.zshrc" ]; then
+  if [ -L "${ZDOTDIR:-$HOME}/.zshrc" ]; then
+    rm "${ZDOTDIR:-$HOME}/.zshrc"
+  else
+    mv "${ZDOTDIR:-$HOME}/.zshrc" "${ZDOTDIR:-$HOME}/.zshrc.back"
+  fi
+fi
+ln -s "${ZDOTDIR:-$HOME}/.dotfiles/zshrc" "${ZDOTDIR:-$HOME}/.zshrc"
 
 # Prezto
-if [ -f $HOME/.zpreztorc ]; then
-  mv "$HOME/.zpreztorc" "$HOME/.zpreztorc.back"
+if [ -f "${ZDOTDIR:-$HOME}/.zpreztorc" ]; then
+  if [ -L "${ZDOTDIR:-$HOME}/.zpreztorc" ]; then
+    rm "${ZDOTDIR:-$HOME}/.zpreztorc"
+  else
+    mv "${ZDOTDIR:-$HOME}/.zpreztorc" "${ZDOTDIR:-$HOME}/.zpreztorc.back"
+  fi
 fi
 ln -nfs "$HOME/.dotfiles/zpreztorc" "${ZDOTDIR:-$HOME}/.zpreztorc"
