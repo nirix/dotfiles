@@ -1,0 +1,9 @@
+[submodule "prezto"]
+	path = prezto
+	url = git://github.com/sorin-ionescu/prezto.git
+[submodule "modules/z"]
+	path = modules/z
+	url = git://github.com/rupa/z.git
+[submodule "modules/spotify_control"]
+	path = modules/spotify_control
+	url = git://github.com/dronir/SpotifyControl.git
