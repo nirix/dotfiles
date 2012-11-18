@@ -5,7 +5,7 @@ by running `brew install zsh`.
 
 Then clone this repository to your home directory:
 
-    git clone git://github.com/nirix/dotfiles.git ~/.dotfiles
+    git clone --recursive git://github.com/nirix/dotfiles.git ~/.dotfiles
 
 Now just `cd .dotfiles` then `zsh install.zsh` and you're done.
 
