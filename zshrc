@@ -26,6 +26,10 @@ alias httpdstart="sudo apachectl start"
 alias httpdstop="sudo apachectl stop"
 alias httpdre="sudo apachectl restart"
 
+# Easily start/stop MySQL and Apache
+alias startserver="mysqlstart; httpdstart"
+alias stopserver="mysqlstop; httpdstop"
+
 # No crap gem installation
 # This is set in the .gemrc file, but eh
 alias geminst="gem install --no-rdoc --no-ri"
