@@ -19,6 +19,8 @@ source ~/.dotfiles/modules/z/z.sh
 
 # Lazy
 alias py=python
+alias rberh="rbenv rehash"
+alias mkdcd="DIR=$1; mkdir -p $DIR; cd $DIR"
 
 # MySQL
 alias mysqlstart="mysql.server start"
