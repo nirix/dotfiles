@@ -5,6 +5,9 @@ fi
 
 # Customize to your needs...
 
+# rbenv <3
+eval "$(rbenv init -)"
+
 # Alias to fix the crappy subl tool for Sublime
 alias subt="subl; subl -a"
 
