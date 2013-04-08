@@ -1,5 +1,10 @@
 ##################
-# Copy Prezto dotfiles
+# Install Prezto
+if [ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ]; then
+  if [ ! -L "${ZDOTDIR:-$HOME}/.zprezto" ]; then
+    ln -nfs "$HOME/.dotfiles/zsh/prezto" "${ZDOTDIR:-$HOME}/.zprezto"
+  fi
+fi
 
 setopt EXTENDED_GLOB
 for rcfile in $HOME/.dotfiles/zsh/prezto/runcoms/^README.md(.N); do
