@@ -20,5 +20,7 @@ eval "$(rbenv init - zsh)"
 # Load fasd
 source "$HOME/.dotfiles/modules/fasd/fasd"
 
+source "$HOME/.dotfiles/aliases"
+
 # COLORS! YAY!
 export LSCOLORS="GxfxcxdxbxGxDxabagacad"
