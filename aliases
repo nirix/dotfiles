@@ -1,0 +1,45 @@
+# Alias to fix the crappy subl tool for Sublime
+alias subt="subl; subl -a"
+alias st="subt"
+
+# Sublime Text 3
+alias st3="/Applications/Other/Development/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+
+# Spotify control from the CLI
+alias spotify="osascript ~/.dotfiles/modules/spotify_control/SpotifyControl.scpt"
+
+# fasd
+alias a='fasd -a'        # any
+alias s='fasd -si'       # show / search / select
+alias d='fasd -d'        # directory
+alias f='fasd -f'        # file
+alias sd='fasd -sid'     # interactive directory selection
+alias sf='fasd -sif'     # interactive file selection
+alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+alias zz='fasd_cd -d -i' # cd with interactive selection
+
+# Lazy
+alias py=python
+alias rbrh="rbenv rehash"
+
+# MariaDB / MySQL
+alias mysqlstart="mysql.server start"
+alias mysqlstop="mysql.server stop"
+
+# Apache, eh
+alias httpdstart="sudo apachectl start"
+alias httpdstop="sudo apachectl stop"
+alias httpdre="sudo apachectl restart"
+
+# Easily start/stop MySQL and Apache
+alias startserver="mysqlstart; httpdstart"
+alias stopserver="mysqlstop; httpdstop"
+
+# No crap gem installation
+# This is set in the .gemrc file, but eh
+alias geminst="gem install --no-rdoc --no-ri"
+
+# http://xkcd.com/530/
+alias stfu="osascript -e 'set volume output muted true'"
+alias pumpitup="osascript -e 'set volume 10'"
+alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
