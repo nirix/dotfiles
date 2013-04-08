@@ -18,7 +18,8 @@ eval "$(rbenv init - zsh)"
 #source ~/.dotfiles/modules/z/z.sh
 
 # Load fasd
-source "$HOME/.dotfiles/modules/fasd/fasd"
+alias fasd="$HOME/.dotfiles/modules/fasd/fasd"
+eval "$(fasd --init auto)"
 
 source "$HOME/.dotfiles/aliases"
 
