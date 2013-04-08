@@ -1,5 +1,5 @@
-[submodule "prezto"]
-	path = prezto
+[submodule "zsh/prezto"]
+	path = zsh/prezto
 	url = git://github.com/sorin-ionescu/prezto.git
 [submodule "modules/z"]
 	path = modules/z
@@ -7,3 +7,12 @@
 [submodule "modules/spotify_control"]
 	path = modules/spotify_control
 	url = git://github.com/dronir/SpotifyControl.git
+[submodule "bash/bash_it"]
+	path = bash/bash_it
+	url = git://github.com/revans/bash-it.git
+[submodule "modules/fasd"]
+	path = modules/fasd
+	url = git://github.com/clvv/fasd.git
+[submodule "fish/oh-my-fish"]
+	path = fish/oh-my-fish
+	url = git://github.com/bpinto/oh-my-fish.git
