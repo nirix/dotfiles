@@ -12,9 +12,9 @@ alias spotify="osascript ~/.dotfiles/modules/spotify_control/SpotifyControl.scpt
 alias py=python
 alias rbrh="rbenv rehash"
 
-# MariaDB / MySQL
-alias mysqlstart="mysql.server start"
-alias mysqlstop="mysql.server stop"
+# MariaDB
+alias mdbstart="mysql.server start"
+alias mdbstop="mysql.server stop"
 
 # Apache, eh
 alias httpdstart="sudo apachectl start"
