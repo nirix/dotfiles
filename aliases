@@ -16,6 +16,10 @@ alias rbrh="rbenv rehash"
 alias mdbstart="mysql.server start"
 alias mdbstop="mysql.server stop"
 
+# PostgreSQL
+alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias pgstop="pg_ctl -D /usr/local/var/postgres stop"
+
 # Apache, eh
 alias httpdstart="sudo apachectl start"
 alias httpdstop="sudo apachectl stop"
