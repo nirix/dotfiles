@@ -13,14 +13,14 @@ fi
 export SSL_CERT_FILE="`brew --prefix curl-ca-bundle`/share/ca-bundle.crt"
 
 # chruby
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
-RUBIES=(~/.rbenv/versions/*)
-chruby `cat ~/.default-ruby`
+# source /usr/local/opt/chruby/share/chruby/chruby.sh
+# source /usr/local/opt/chruby/share/chruby/auto.sh
+# RUBIES=(~/.rbenv/versions/*)
+# chruby `cat ~/.default-ruby`
 
-# rbenv, disabled, chruby is much nicer
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# eval "$(rbenv init - zsh)"
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - zsh)"
 
 # Load z
 #source ~/.dotfiles/modules/z/z.sh
