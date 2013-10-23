@@ -1,9 +1,9 @@
 # Alias to fix the crappy subl tool for Sublime
-alias subt="subl; subl -a"
-alias st="subt"
+#alias subt="subl; subl -a"
+#alias st="subt"
 
 # Sublime Text 3
-alias st3="/Applications/Other/Development/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+alias st="/Applications/Other/Development/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
 # Spotify control from the CLI
 alias spotify="osascript ~/.dotfiles/modules/spotify_control/SpotifyControl.scpt"
@@ -11,6 +11,7 @@ alias spotify="osascript ~/.dotfiles/modules/spotify_control/SpotifyControl.scpt
 # Lazy
 alias py=python
 alias rbrh="rbenv rehash"
+alias be="bundle exec"
 
 # Rubinius stuff
 alias xgem="rbx -S gem"
@@ -33,8 +34,11 @@ alias httpdstop="sudo apachectl stop"
 alias httpdre="sudo apachectl restart"
 
 # Easily start/stop MySQL and Apache
-alias startserver="mysqlstart; httpdstart"
-alias stopserver="mysqlstop; httpdstop"
+alias startserver="mdbstart; httpdstart"
+alias stopserver="mdbstop; httpdstop"
+
+# wat
+alias whereami="echo $PWD"
 
 # No crap gem installation
 # This is set in the .gemrc file, but eh
