@@ -10,7 +10,6 @@ alias spotify="osascript ~/.dotfiles/modules/spotify_control/SpotifyControl.scpt
 
 # Lazy
 alias py=python
-alias rbrh="rbenv rehash"
 alias be="bundle exec"
 
 # Rubinius stuff
@@ -36,13 +35,6 @@ alias httpdre="sudo apachectl restart"
 # Easily start/stop MySQL and Apache
 alias startserver="mdbstart; httpdstart"
 alias stopserver="mdbstop; httpdstop"
-
-# wat
-alias whereami="echo $PWD"
-
-# No crap gem installation
-# This is set in the .gemrc file, but eh
-alias geminst="gem install --no-rdoc --no-ri"
 
 # http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"
