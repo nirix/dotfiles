@@ -26,6 +26,8 @@ function prompt_wat_setup {
   autoload -Uz add-zsh-hook
   add-zsh-hook precmd prompt_wat_precmd
 
+  zstyle ':prezto:module:git:info' verbose 'yes'
+
   #zstyle ':prezto:module:git:info:action' format ':%%B%F{yellow}%s%f%%b'
   #zstyle ':prezto:module:git:info:ahead' format ' %%B%F{yellow}⬆%f%%b'
   #zstyle ':prezto:module:git:info:behind' format ' %%B%F{yellow}⬇%f%%b'
