@@ -12,6 +12,11 @@ alias spotify="osascript ~/.dotfiles/modules/spotify_control/SpotifyControl.scpt
 alias py=python
 alias be="bundle exec"
 
+function mkcd() {
+  mkdir -p $1
+  cd $1
+}
+
 # Rubinius stuff
 alias xgem="rbx -S gem"
 alias xbundle="rbx -S bundle"
