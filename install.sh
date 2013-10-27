@@ -23,12 +23,10 @@ function install {
 
 if [ $SHELL = "zsh" ]; then
   zsh zsh/install.zsh
-  install
 elif [ $SHELL = "fish" ]; then
   fish fish/install.fish
-  install
 elif [ $SHELL = "bash" ]; then
   bash bash/install.bash
-  install
 fi
 
+install
