@@ -10,11 +10,16 @@ fi
 # Customize to your needs...
 
 # SSL Certificate file
-export SSL_CERT_FILE="`brew --prefix curl-ca-bundle`/share/ca-bundle.crt"
+if [ `which brew` ]; then
+  export SSL_CERT_FILE="`brew --prefix curl-ca-bundle`/share/ca-bundle.crt"
+fi
 
 # chruby
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+if [[ -s "/usr/local/share/chruby/chruby.sh" ]]; then
+  source /usr/local/share/chruby/chruby.sh
+  source /usr/local/share/chruby/auto.sh
+fi
+
 # RUBIES=(~/.rbenv/versions/*)
 # chruby `cat ~/.default-ruby`
 
