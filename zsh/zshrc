@@ -41,3 +41,22 @@ source "$HOME/.dotfiles/aliases"
 
 # COLORS! YAY!
 export LSCOLORS="GxfxcxdxbxGxDxabagacad"
+
+# Path
+export PATH=$HOME/.local/bin:$PATH
+
+# Bindings
+
+# vi
+bindkey -v
+
+# emacs
+# bindkey -e
+
+# ctl + arrow keys
+# bindkey ";5D" backward-word
+# bindkey ";5C" forward-word
+
+# alt + arrow keys
+# bindkey ";3D" beginning-of-line
+# bindkey ";3C" end-of-line
