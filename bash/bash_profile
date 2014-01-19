@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
+if [ "$(uname)" = "Darwin" ]; then
+  if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+  fi
 fi
 
 # Path to the bash it configuration
@@ -14,14 +16,5 @@ export BASH_IT_THEME='wat'
 # Load Bash It
 source $BASH_IT/bash_it.sh
 
-# rbenv
-if [[ ! `which rbenv` ]]
-  then
-    export PATH="$HOME/.rbenv/bin:$PATH"
-    eval "$(rbenv init - bash)"
-fi
-
-alias fasd="$HOME/.dotfiles/modules/fasd/fasd"
-eval "$(fasd --init auto)"
-
-source "$HOME/.dotfiles/aliases"
+# Common things
+source "$HOME/.dotfiles/common.sh"
