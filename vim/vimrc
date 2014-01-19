@@ -46,7 +46,5 @@ set number
 let g:enable_numbers = 0
 
 " Tabs
-map <C-t><Left> :tabr<cr>
-map <C-t><Down> :tabl<cr>
 map <C-t><Left> :tabp<cr>
 map <C-t><Right> :tabn<cr>
