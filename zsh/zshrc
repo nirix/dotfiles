@@ -9,26 +9,29 @@ fi
 
 # Customize to your needs...
 
-# SSL Certificate file
-if [ `which brew` ]; then
+
+# Linux or OS X?
+if [ "$(uname)" != "Darwin" ]; then
+
+  # chruby
+  if [[ -s "/usr/share/chruby/chruby.sh" ]]; then
+    source /usr/share/chruby/chruby.sh
+    source /usr/share/chruby/auto.sh
+  fi
+
+
+else
+
+  # SSL Certificate file
   export SSL_CERT_FILE="`brew --prefix curl-ca-bundle`/share/ca-bundle.crt"
+
+  # chruby
+  if [[ -s "/usr/local/share/chruby/chruby.sh" ]]; then
+    source /usr/local/share/chruby/chruby.sh
+    source /usr/local/share/chruby/auto.sh
+  fi
+
 fi
-
-# chruby
-if [[ -s "/usr/local/share/chruby/chruby.sh" ]]; then
-  source /usr/local/share/chruby/chruby.sh
-  source /usr/local/share/chruby/auto.sh
-fi
-
-# RUBIES=(~/.rbenv/versions/*)
-# chruby `cat ~/.default-ruby`
-
-# rbenv
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# eval "$(rbenv init - zsh)"
-
-# Load z
-#source ~/.dotfiles/modules/z/z.sh
 
 # Load fasd
 alias fasd="$HOME/.dotfiles/modules/fasd/fasd"
