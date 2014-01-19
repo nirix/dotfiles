@@ -19,8 +19,7 @@ enable_plugin 'browser'
 enable_plugin 'dirs'
 enable_plugin 'extract'
 enable_plugin 'git'
-enable_plugin 'osx'
-enable_plugin 'rbenv'
+# enable_plugin 'rbenv'
 
 # Aliases
 mkdir "$HOME/.dotfiles/bash/bash_it/aliases/enabled"
@@ -32,5 +31,10 @@ function enable_alias {
 enable_alias 'bundler'
 enable_alias 'general'
 enable_alias 'git'
-enable_alias 'homebrew'
-enable_alias 'osx'
+
+# OS X only
+if [ "$(uname)" = "Darwin" ]; then
+  enable_plugin 'osx'
+  enable_alias 'homebrew'
+  enable_alias 'osx'
+fi
