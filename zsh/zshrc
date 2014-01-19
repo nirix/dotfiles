@@ -9,6 +9,8 @@ fi
 
 # Customize to your needs...
 
+# Aliases
+source "$HOME/.dotfiles/aliases/general"
 
 # Linux or OS X?
 if [ "$(uname)" != "Darwin" ]; then
@@ -19,6 +21,7 @@ if [ "$(uname)" != "Darwin" ]; then
     source /usr/share/chruby/auto.sh
   fi
 
+  # source "$HOME/.dotfiles/aliases/linux"
 
 else
 
@@ -30,6 +33,8 @@ else
     source /usr/local/share/chruby/chruby.sh
     source /usr/local/share/chruby/auto.sh
   fi
+
+  source "$HOME/.dotfiles/aliases/osx"
 
 fi
 

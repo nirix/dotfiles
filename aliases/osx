@@ -1,0 +1,10 @@
+# Sublime Text 3
+alias st="/Applications/Other/Development/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+
+# Spotify control from the CLI
+alias spotify="osascript ~/.dotfiles/modules/spotify_control/SpotifyControl.scpt"
+
+# http://xkcd.com/530/
+alias stfu="osascript -e 'set volume output muted true'"
+alias pumpitup="osascript -e 'set volume 10'"
+alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
