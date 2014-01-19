@@ -37,8 +37,6 @@ fi
 alias fasd="$HOME/.dotfiles/modules/fasd/fasd"
 eval "$(fasd --init auto)"
 
-source "$HOME/.dotfiles/aliases"
-
 # COLORS! YAY!
 export LSCOLORS="GxfxcxdxbxGxDxabagacad"
 
