@@ -14,7 +14,12 @@ function install {
     mv "$HOME/.gemrc" "$HOME/.gemrc.old"
   fi
 
+  if [ -f "$HOME/.vimrc" ]; then
+    mv "$HOME/.vimrc" "$HOME/.vimrc.old"
+  fi
+
   ln -s "$HOME/.dotfiles/gemrc" "$HOME/.gemrc"
+  ln -s "$HOME/.dotfiles/vim/vimrc" "$HOME/.vimrc"
 
   echo ".files installed"
 }
