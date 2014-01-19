@@ -11,12 +11,10 @@ echo "Setting up for $SHELL"
 function install {
   # Gem file
   if [ -f "$HOME/.gemrc" ]; then
-    read -p "Overwrite .gemrc? [y/n] " REPLACE_GEMRC
-    if [ $REPLACE_GEMRC = 'y' ]; then
-      rm "$HOME/.gemrc"
-      ln -s "$HOME/.dotfiles/gemrc" "$HOME/.gemrc"
-    fi
+    mv "$HOME/.gemrc" "$HOME/.gemrc.old"
   fi
+
+  ln -s "$HOME/.dotfiles/gemrc" "$HOME/.gemrc"
 
   echo ".files installed"
 }
