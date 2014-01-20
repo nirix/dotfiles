@@ -10,7 +10,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'myusuf3/numbers.vim'
 Bundle 'Shougo/neocomplcache.vim'
-Bundle 'kein/ctrlp.vim'
+Bundle 'kien/ctrlp.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'chriskempson/tomorrow-theme', { "rtp": "vim/" }
 "Bundle 'mattn/emmet-vim'
@@ -19,7 +19,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/powerline', { "rtp": "powerline/bindings/vim/" }
-"Bundle 'bling/vim-airline'
 
 filetype plugin indent on
 syntax on
@@ -63,13 +62,6 @@ let g:enable_numbers = 0
 " Tabs
 map <C-t><Left> :tabp<cr>
 map <C-t><Right> :tabn<cr>
-
-" Per-file settings
-"autocmd! FileType ruby  setlocal sw=2 sts=2 ts=2 expandtab
-"autocmd! FileType eruby setlocal sw=2 sts=2 ts=2 expandtab
-"autocmd! FileType yaml  setlocal sw=2 sts=2 ts=2 expandtab
-"autocmd! FileType php   setlocal sw=4 sts=4 ts=4 expandtab
-"autocmd! FileType html  setlocal sw=4 sts=4 ts=4 noexpandtab
 
 " Set filetypes
 autocmd! BufRead,BufNewFile *.phtml set filetype=html
