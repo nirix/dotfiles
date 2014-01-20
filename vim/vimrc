@@ -18,6 +18,7 @@ Bundle 'rstacruz/sparkup', { "rtp": "vim/" }
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/powerline', { "rtp": "powerline/bindings/vim" }
 
 filetype plugin indent on
 syntax on
@@ -35,6 +36,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Colour scheme
 set t_Co=256
 colorscheme Tomorrow-Night
+
+" Powerline
+set laststatus=2
 
 " NeoComplCache
 let g:neocomplcache_enable_at_startup=1
