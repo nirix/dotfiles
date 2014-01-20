@@ -14,8 +14,7 @@ Bundle 'kein/ctrlp.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'chriskempson/tomorrow-theme', { "rtp": "vim/" }
 "Bundle 'mattn/emmet-vim'
-"Bundle 'rstacruz/sparkup', { "rtp": "vim/" }
-Bundle 'fortable1999/sparkup', { "rtp": "vim/" }
+Bundle 'rstacruz/sparkup', { "rtp": "vim/" }
 Bundle 'tpope/vim-surround'
 
 filetype plugin indent on
