@@ -1,8 +1,4 @@
 # Source Prezto.
-#if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-#  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-#fi
-
 if [[ -s "$HOME/.dotfiles/zsh/prezto/init.zsh" ]]; then
   source "$HOME/.dotfiles/zsh/prezto/init.zsh"
 fi
@@ -18,11 +14,7 @@ source "$HOME/.dotfiles/common.sh"
 # COLORS! YAY!
 export LSCOLORS="GxfxcxdxbxGxDxabagacad"
 
-# Path
-export PATH=$HOME/.local/bin:$PATH
-
 # Bindings
-
 # vi
 bindkey -v
 
