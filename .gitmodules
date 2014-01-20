@@ -1,12 +1,12 @@
-[submodule "zsh/prezto"]
-	path = zsh/prezto
-	url = git://github.com/sorin-ionescu/prezto.git
-[submodule "modules/spotify_control"]
-	path = modules/spotify_control
-	url = git://github.com/dronir/SpotifyControl.git
-[submodule "bash/bash_it"]
-	path = bash/bash_it
-	url = git://github.com/revans/bash-it.git
-[submodule "modules/fasd"]
-	path = modules/fasd
-	url = git://github.com/clvv/fasd.git
+[submodule "shells/modules/prezto"]
+	path = shells/modules/prezto
+	url = https://github.com/sorin-ionescu/prezto.git
+[submodule "shells/modules/bash-it"]
+	path = shells/modules/bash-it
+	url = https://github.com/revans/bash-it.git
+[submodule "shells/modules/fasd"]
+	path = shells/modules/fasd
+	url = https://github.com/clvv/fasd.git
+[submodule "shells/modules/SpotifyControl"]
+	path = shells/modules/SpotifyControl
+	url = https://github.com/dronir/SpotifyControl.git
