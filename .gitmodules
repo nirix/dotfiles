@@ -10,3 +10,6 @@
 [submodule "shells/modules/SpotifyControl"]
 	path = shells/modules/SpotifyControl
 	url = https://github.com/dronir/SpotifyControl.git
+[submodule "vim/bundle/vundle"]
+	path = vim/bundle/vundle
+	url = https://github.com/gmarik/vundle.git
