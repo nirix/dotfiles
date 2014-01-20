@@ -2,7 +2,7 @@
 # General
 #
 
-fpath=("$HOME/.dotfiles/zsh/themes" $fpath)
+fpath=("$HOME/.dotfiles/shells/zsh/themes" $fpath)
 
 # Set case-sensitivity for completion, history lookup, etc.
 zstyle ':prezto:*:*' case-sensitive 'no'

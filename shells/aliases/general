@@ -1,6 +1,7 @@
 # Lazy
 alias py=python
 alias be="bundle exec"
+alias nano="nano -w"
 
 function mkcd() {
   mkdir -p $1

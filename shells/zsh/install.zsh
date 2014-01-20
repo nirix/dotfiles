@@ -2,12 +2,12 @@
 # Install Prezto
 if [ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ]; then
   if [ ! -L "${ZDOTDIR:-$HOME}/.zprezto" ]; then
-    ln -nfs "$HOME/.dotfiles/zsh/prezto" "${ZDOTDIR:-$HOME}/.zprezto"
+    ln -nfs "$HOME/.dotfiles/shells/modules/prezto" "${ZDOTDIR:-$HOME}/.zprezto"
   fi
 fi
 
 setopt EXTENDED_GLOB
-for rcfile in $HOME/.dotfiles/zsh/prezto/runcoms/^README.md(.N); do
+for rcfile in $HOME/.dotfiles/shells/modules/prezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "$HOME/.${rcfile:t}"
 done
 
@@ -22,7 +22,7 @@ if [ -f "$HOME/.zshrc" ]; then
     mv "$HOME/.zshrc" "$HOME/.zshrc.back"
   fi
 fi
-ln -s "$HOME/.dotfiles/zsh/zshrc" "$HOME/.zshrc"
+ln -s "$HOME/.dotfiles/shells/zsh/zshrc" "$HOME/.zshrc"
 
 # Prezto
 if [ -f "$HOME/.zpreztorc" ]; then
@@ -32,4 +32,4 @@ if [ -f "$HOME/.zpreztorc" ]; then
     mv "$HOME/.zpreztorc" "$HOME/.zpreztorc.back"
   fi
 fi
-ln -nfs "$HOME/.dotfiles/zsh/zpreztorc" "$HOME/.zpreztorc"
+ln -nfs "$HOME/.dotfiles/shells/zsh/zpreztorc" "$HOME/.zpreztorc"
