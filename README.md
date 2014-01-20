@@ -1,6 +1,6 @@
 ## What to do
 
-Make sure either `zsh`, `fish` or `bash` is installed, then clone this repository into
+Make sure either `zsh` or `bash` is installed, then clone this repository into
 your home directory:
 
     git clone --recursive git://github.com/nirix/dotfiles.git ~/.dotfiles
