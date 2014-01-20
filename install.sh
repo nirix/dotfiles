@@ -1,33 +1,37 @@
 #!/bin/bash
 #
 # .files installation
-# Copyright (c) 2012-2013 J. Polgar
+# Copyright (c) 2012-2014 J. Polgar
 #
 
-read -p "What shell are you using? [zsh/fish/bash] " SHELL
+read -p "What shell are you using? [zsh/bash] " SHELL
 
 echo "Setting up for $SHELL"
 
+function linkfile {
+  if [ -f "$HOME/$1" ] || [ -d "$HOME/$1" ]; then
+    echo "Moved ~/.$1 to ~/.$1.back"
+    mv "$HOME/$1" "$HOME/$1.back"
+  fi
+
+  ln -s "$HOME/.dotfiles/$1" "$HOME/.$1"
+}
+
 function install {
-  # Gem file
-  if [ -f "$HOME/.gemrc" ]; then
-    mv "$HOME/.gemrc" "$HOME/.gemrc.old"
-  fi
+  # Link dot files
+  linkfile 'gemrc'
+  linkfile 'vimrc'
 
-  if [ -f "$HOME/.vimrc" ]; then
-    mv "$HOME/.vimrc" "$HOME/.vimrc.old"
-  fi
-
-  ln -s "$HOME/.dotfiles/gemrc" "$HOME/.gemrc"
-  ln -s "$HOME/.dotfiles/vim/vimrc" "$HOME/.vimrc"
+  # Link dot directories
+  linkfile 'vim'
 
   echo ".files installed"
 }
 
 if [ $SHELL = "zsh" ]; then
-  zsh zsh/install.zsh
+  zsh shells/zsh/install.zsh
 elif [ $SHELL = "bash" ]; then
-  bash bash/install.bash
+  bash shells/bash/install.bash
 fi
 
 install
