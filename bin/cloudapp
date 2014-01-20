@@ -23,7 +23,7 @@ if ARGV[0].nil?
 end
 
 # Get email and password
-email, password = File.read(config_file).split "\n"
+email, password = File.read("#{ENV['HOME']}/.cloudapp").split "\n"
 
 # Authenticate with the API
 CloudApp.authenticate email, password
