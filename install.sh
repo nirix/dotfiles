@@ -26,8 +26,6 @@ function install {
 
 if [ $SHELL = "zsh" ]; then
   zsh zsh/install.zsh
-elif [ $SHELL = "fish" ]; then
-  fish fish/install.fish
 elif [ $SHELL = "bash" ]; then
   bash bash/install.bash
 fi
