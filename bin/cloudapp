@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+#
+# cloudapp
+# Easily upload files from the command line.
+#
+# https://github.com/nirix
+#
+
+# Check gems
+['json', 'cloudapp_api'].each do |gem|
+  begin
+    require gem
+  rescue LoadError
+    puts "Required gem missing: #{gem}"
+    exit! 1
+  end
+end
+
+# Any files to upload?
+if ARGV[0].nil?
+  puts "No files to upload"
+  exit! 1
+end
+
+# Get email and password
+email, password = File.read(config_file).split "\n"
+
+# Authenticate with the API
+CloudApp.authenticate email, password
+
+# Upload the files
+ARGV.each do |file|
+  puts "Uploading #{file}"
+  url = CloudApp::Item.create(:upload, { file: file }).url
+  puts "Uploaded #{file} to #{url}"
+end
