@@ -59,9 +59,8 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 
 " NERDTree
-map <C-d> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
-map <C-n> :NERDTreeMirror<CR>
+map <C-d> <Plug>NERDTreeMirrorToggle<CR>
 
 " Line numbers
 set number
@@ -75,3 +74,20 @@ map <C-t><Right> :tabn<cr>
 autocmd! BufRead,BufNewFile *.phtml set filetype=html
 autocmd! BufRead,BufNewFile *.md    set filetype=markdown
 autocmd! BufRead,BufNewFile Gemfile set filetype=ruby
+
+" Better NERDTree toggling
+noremap <silent> <script> <Plug>NERDTreeMirrorToggle :call <SID>NERDTreeMirrorOrOpen()
+command! NERDTreeMirrorToggle call <SID>NERDTreeMirrorOrOpen()
+
+fun! s:NERDTreeMirrorOrOpen()
+  let l:nerdtree_open = exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1
+  if l:nerdtree_open
+    silent NERDTreeClose
+  else
+    let l:prev_winnr = winnr("$")
+    silent NERDTreeMirror
+    if l:prev_winnr == winnr("$")
+      silent NERDTreeToggle
+    endif
+  endif
+endfun
