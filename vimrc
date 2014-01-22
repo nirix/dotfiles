@@ -23,6 +23,14 @@ Bundle 'Lokaltog/powerline', { "rtp": "powerline/bindings/vim/" }
 filetype plugin indent on
 syntax on
 
+" GUI
+if has('gui_running')
+  set guifont=Source\ Code\ Pro\ for\ Powerline
+endif
+
+" Set <Leader> to comma
+let mapleader = ","
+
 " Start scrolling before window border
 set scrolloff=4
 
