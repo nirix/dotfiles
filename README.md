@@ -6,6 +6,8 @@ your home directory:
 
     git clone --recursive git://github.com/nirix/dotfiles.git ~/.dotfiles
 
+__Note:__ None of this has been tested on OS X since I switched to Linux full time.
+
 Now just `cd ~/.dotfiles` and `./install.sh` and enter the shell you want to use.
 
 The 'osx' file
