@@ -56,7 +56,7 @@ let g:acp_enableAtStartup = 0
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_min_syntax_length = 3
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-e> neocomplcache#cancel_popup()
 
 " NERDTree
 let NERDTreeShowHidden=1
