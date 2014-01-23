@@ -19,6 +19,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/powerline', { "rtp": "powerline/bindings/vim/" }
+Bundle 'terryma/vim-multiple-cursors'
 
 filetype plugin indent on
 syntax on
