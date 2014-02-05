@@ -29,9 +29,9 @@ else
   export SSL_CERT_FILE="`brew --prefix curl-ca-bundle`/share/ca-bundle.crt"
 
   # chruby
-  if [[ -s "/usr/local/share/chruby/chruby.sh" ]]; then
-    source /usr/local/share/chruby/chruby.sh
-    source /usr/local/share/chruby/auto.sh
+  if [[ -s "/usr/local/opt/chruby/share/chruby/chruby.sh" ]]; then
+    source /usr/local/opt/chruby/share/chruby/chruby.sh
+    source /usr/local/opt/chruby/share/chruby/auto.sh
   fi
 
   source "$HOME/.dotfiles/shells/aliases/osx"
