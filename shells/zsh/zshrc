@@ -16,15 +16,15 @@ export LSCOLORS="GxfxcxdxbxGxDxabagacad"
 
 # Bindings
 # vi
-bindkey -v
+# bindkey -v
 
 # emacs
-# bindkey -e
+bindkey -e
 
 # ctl + arrow keys
-# bindkey ";5D" backward-word
-# bindkey ";5C" forward-word
+bindkey ";5D" backward-word
+bindkey ";5C" forward-word
 
 # alt + arrow keys
-# bindkey ";3D" beginning-of-line
-# bindkey ";3C" end-of-line
+bindkey ";3D" beginning-of-line
+bindkey ";3C" end-of-line
