@@ -26,7 +26,7 @@ if [ "$(uname)" != "Darwin" ]; then
 else
 
   # SSL Certificate file
-  export SSL_CERT_FILE="`brew --prefix curl-ca-bundle`/share/ca-bundle.crt"
+  # export SSL_CERT_FILE="`brew --prefix curl-ca-bundle`/share/ca-bundle.crt"
 
   # chruby
   if [[ -s "/usr/local/opt/chruby/share/chruby/chruby.sh" ]]; then
