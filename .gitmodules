@@ -1,15 +1,6 @@
-[submodule "shells/modules/prezto"]
-	path = shells/modules/prezto
-	url = https://github.com/sorin-ionescu/prezto.git
 [submodule "shells/modules/bash-it"]
 	path = shells/modules/bash-it
 	url = https://github.com/revans/bash-it.git
-[submodule "shells/modules/fasd"]
-	path = shells/modules/fasd
-	url = https://github.com/clvv/fasd.git
 [submodule "shells/modules/SpotifyControl"]
 	path = shells/modules/SpotifyControl
 	url = https://github.com/dronir/SpotifyControl.git
-[submodule "vim/bundle/vundle"]
-	path = vim/bundle/vundle
-	url = https://github.com/gmarik/vundle.git

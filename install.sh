@@ -25,6 +25,13 @@ function install {
   # Link dot directories
   linkfile 'vim'
 
+  # git config
+  cp gitconfig ~/.gitconfig
+
+  # modules
+  git clone --recursive https://github.com/clvv/fasd.git shells/modules/fasd
+  git clone --recursive  https://github.com/gmarik/vundle.git vim/bundle/vundle
+
   echo ".files installed"
 }
 

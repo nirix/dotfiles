@@ -1,5 +1,7 @@
 ##################
 # Install Prezto
+git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.dotfiles/shells/modules/prezto
+
 if [ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ]; then
   if [ ! -L "${ZDOTDIR:-$HOME}/.zprezto" ]; then
     ln -nfs "$HOME/.dotfiles/shells/modules/prezto" "${ZDOTDIR:-$HOME}/.zprezto"

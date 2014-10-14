@@ -1,0 +1,15 @@
+[alias]
+    c = clone
+    cr = clone --recursive
+    co = checkout
+
+[url "https://"]
+    insteadOf = git://
+
+[url "https://github.com/"]
+    insteadOf = gh:
+
+[url "git@github.com:"]
+    pushInsteadOf = https://github.com/
+    pushInsteadOf = git://github.com/
+    pushInsteadOf = gh:
