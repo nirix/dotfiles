@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # .files installation
-# Copyright (c) 2012-2014 J. Polgar
+# Copyright (c) 2012-2015 J. Polgar
 #
 
 read -p "What shell are you using? [zsh/bash] " SHELL
@@ -21,6 +21,7 @@ function install {
   # Link dot files
   linkfile 'gemrc'
   linkfile 'vimrc'
+  linkfile 'gvimrc'
 
   # Link dot directories
   linkfile 'vim'
@@ -30,7 +31,7 @@ function install {
 
   # modules
   git clone --recursive https://github.com/clvv/fasd.git shells/modules/fasd
-  git clone --recursive  https://github.com/gmarik/vundle.git vim/bundle/vundle
+  #git clone --recursive  https://github.com/gmarik/vundle.git vim/bundle/vundle
 
   echo ".files installed"
 }
