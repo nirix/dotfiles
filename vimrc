@@ -1,94 +1,211 @@
+" ============================================================================
+" GENERAL SETTINGS
+"
 set nocompatible
-set encoding=utf-8
-filetype off
-
-set rtp+=~/.dotfiles/vim/bundle/vundle
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'myusuf3/numbers.vim'
-Bundle 'Shougo/neocomplcache.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'godlygeek/tabular'
-Bundle 'chriskempson/tomorrow-theme', { "rtp": "vim/" }
-"Bundle 'mattn/emmet-vim'
-Bundle 'rstacruz/sparkup', { "rtp": "vim/" }
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Lokaltog/powerline', { "rtp": "powerline/bindings/vim/" }
-Bundle 'terryma/vim-multiple-cursors'
-
-filetype plugin indent on
-syntax on
-
-" GUI
-if has('gui_running')
-  set guifont=Source\ Code\ Pro\ for\ Powerline
-endif
-
-" Set <Leader> to comma
-let mapleader = ","
-
-" Start scrolling before window border
-set scrolloff=4
-
-" Enable mouse
+set backspace=indent,eol,start
+set omnifunc=syntaxcomplete#Complete
+set backupskip=/tmp/*
+set clipboard=unnamed
+set pastetoggle=<F2>
 set mouse=a
+set tabline=%f
+set guitablabel=%f
+
+" Printer settings
+set printoptions=number:n
+set printoptions=header:0
+
+" Leader setting"
+let mapleader      = ','
+let maplocalleader = '\'
+
+" Add $ at the end of the change match
+set cpoptions+=$
+
+" Cursor line and column highlight
+"set nocursorcolumn
+"set nocursorline
+set cursorline
+
+" Disable parens matching.
+"let loaded_matchparen = 1
+
+let g:ctrlp_custom_ignore = {'dir': '\v[\/]\.(git|hg|svn|staging)$'}
 
 " Whitespace
 set listchars=eol:$,tab:>-,trail:*,extends:>,precedes:<
 set list
 
-" Remove trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
+" ============================================================================
+" PLUGIN SETTINGS
+"
+let g:plug_url_format = 'git@github.com:%s.git'
+
+call plug#begin('~/.vim/plugged')
+
+" Languages and related
+"Plug 'elzr/vim-json'
+"Plug 'jelera/vim-javascript-syntax'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'fatih/vim-go'
+Plug 'groenewege/vim-less'
+Plug 'kchmck/vim-coffee-script'
+Plug 'mattn/emmet-vim'
+Plug 'noprompt/vim-yardoc'
+Plug 'pangloss/vim-javascript'
+Plug 'rust-lang/rust.vim'
+Plug 'tpope/vim-haml'
+Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
+
+" Other
+"Plug 'vim-scripts/tComment'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'Raimondi/delimitMate'
+Plug 'SirVer/ultisnips'
+Plug 'Valloric/YouCompleteMe'
+Plug 'airblade/vim-gitgutter'
+Plug 'bling/vim-airline'
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'godlygeek/tabular'
+Plug 'kien/ctrlp.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'", {'on': 'SyntasticCheck'}
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tomtom/tlib_vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+
+call plug#end()
+
+" Syntastic settings.
+let g:syntastic_auto_loc_list  = 0
+let g:syntastic_stl_format     = '[%E{Errors: %e, line %fe}%B{ | }'
+let g:syntastic_stl_format    .= '%W{Warnings: %w, line %fw}]'
+
+let g:syntastic_c_check_header          = 0
+let g:syntastic_c_compiler_options      = ' -Wextra -Wall'
+let g:syntastic_c_remove_include_errors = 1
+
+let g:syntastic_cpp_compiler_options   = ' -Wextra -Wall -std=c++11'
+let g:syntastic_javascript_jshint_args = '--config ~/.jshint'
+
+" Airline
+set laststatus=2
+"let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
+" Ignore syntax checking for Shell scripts as this is currently broken.
+let g:syntastic_mode_map = {
+  \ 'mode': 'passive',
+  \ 'active_filetypes': ['c', 'javascript', 'coffee', 'cpp', 'rust']}
+
+" Ruby linting
+let g:syntastic_ruby_checkers = ['rubylint']
+
+" UltiSnips settings.
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" NERDTree settings.
+let NERDTreeShowBookmarks = 0
+let NERDTreeIgnore        = ['\.pyc$', '\.pyo$', '__pycache__', '\.o$']
+
+" ============================================================================
+" SYNTAX SETTINGS
+"
+" Settings related to configuring the syntax features of Vim such as the text
+" width, what theme to use and so on.
+"
+set textwidth=80
+set nowrap
+set number
+set synmaxcol=256
+set diffopt=filler,vertical
+filetype plugin indent on
+syntax on
 
 " Colour scheme
 set t_Co=256
 colorscheme Tomorrow-Night
 
-" Powerline
-set laststatus=2
+" colorcolumn doesn't work on slightly older versions of Vim.
+if version >= 703
+  set colorcolumn=80,120
+endif
 
-" NeoComplCache
-let g:acp_enableAtStartup = 0
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_min_syntax_length = 3
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><C-e> neocomplcache#cancel_popup()
+" Indentation settings
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+set expandtab
 
-" NERDTree
-let NERDTreeShowHidden=1
-map <C-d> <Plug>NERDTreeMirrorToggle<CR>
+" ============================================================================
+" CUSTOM FUNCTIONS
+"
+" A collection of custom functions such as a function used for trimming
+" trailing whitespace or converting a file's encoding to UTF-8.
 
-" Line numbers
-set number
-let g:enable_numbers = 0
+" Removes trailing whitespace from the current buffer.
+function! Trim()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//eg
+  call cursor(l, c)
+:endfunction
 
-" Tabs
-map <C-t><Left> :tabp<cr>
-map <C-t><Right> :tabn<cr>
+" ============================================================================
+" HOOKS
+"
+" Collection of various hooks that have to be executed when a certain filetype
+" is set or action is executed.
 
-" Set filetypes
-autocmd! BufRead,BufNewFile *.phtml set filetype=html
-autocmd! BufRead,BufNewFile *.md    set filetype=markdown
-autocmd! BufRead,BufNewFile Gemfile set filetype=ruby
+" Automatically strip trailing whitespace.
+autocmd! BufWritePre * :call Trim()
 
-" Better NERDTree toggling
-noremap <silent> <script> <Plug>NERDTreeMirrorToggle :call <SID>NERDTreeMirrorOrOpen()
-command! NERDTreeMirrorToggle call <SID>NERDTreeMirrorOrOpen()
+" Set a few filetypes for some uncommon extensions
+autocmd! BufRead,BufNewFile *.md     set filetype=markdown
+autocmd! BufRead,BufNewFile Gemfile  set filetype=ruby
+autocmd! BufRead,BufNewFile *.rake   set filetype=ruby
+autocmd! BufRead,BufNewFile *.ru     set filetype=ruby
+autocmd! BufRead,BufNewFile *.rs     set filetype=rust
+autocmd! BufRead,BufNewFile *.rll    set filetype=rll
+autocmd! BufRead,BufNewFile *.phtml  set filetype=html
 
-fun! s:NERDTreeMirrorOrOpen()
-  let l:nerdtree_open = exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1
-  if l:nerdtree_open
-    silent NERDTreeClose
-  else
-    let l:prev_winnr = winnr("$")
-    silent NERDTreeMirror
-    if l:prev_winnr == winnr("$")
-      silent NERDTreeToggle
-    endif
-  endif
-endfun
+" Taken from http://vim.wikia.com/wiki/Highlight_unwanted_spaces
+autocmd BufWinEnter * match Visual /\s\+$/
+autocmd InsertEnter * match Visual /\s\+\%#\@<!$/
+autocmd InsertLeave * match Visual /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+" Use 2 spaces per indentation level for Ruby, YAML and Vim script.
+autocmd! FileType ruby   setlocal sw=2 sts=2 ts=2 expandtab
+autocmd! FileType eruby  setlocal sw=2 sts=2 ts=2 expandtab
+autocmd! FileType yaml   setlocal sw=2 sts=2 ts=2 expandtab
+autocmd! FileType coffee setlocal sw=2 sts=2 ts=2 expandtab
+autocmd! FileType html   setlocal sw=4 sts=4 ts=4 noexpandtab
+autocmd! FileType rust   setlocal tw=80
+
+" ============================================================================
+" KEY BINDINGS
+"
+" A collection of custom key bindings.
+"
+map <F5> :SyntasticCheck<CR><Esc>
+map <c-d> :NERDTreeToggle<CR><Esc>
+
+" ============================================================================
+" HOST SPECIFIC CONFIGURATION
+"
+" Load a host specific .vimrc. This allows this generic .vimrc file to be
+" re-used across the various machines that I use while still being able to set
+" host specific configuration options.
+"
+" The name .hvimrc is derived from "host specific .vimrc".
+"
+if filereadable(expand('~/.hvimrc'))
+  source ~/.hvimrc
+endif
