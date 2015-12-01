@@ -12,8 +12,8 @@ export EDITOR=vim
 alias fasd="$HOME/.dotfiles/shells/modules/fasd/fasd"
 eval "$(fasd --init auto)"
 
-# Linux or OS X?
-if [ "$(uname)" != "Darwin" ]; then
+# Linux, OS X or FreeBSD?
+if [ "$(uname)" = "Linux" ]; then
 
   # chruby
   if [[ -s "/usr/share/chruby/chruby.sh" ]]; then
@@ -23,7 +23,7 @@ if [ "$(uname)" != "Darwin" ]; then
 
   # source "$HOME/.dotfiles/aliases/linux"
 
-else
+elif [ "$(uname)" = "Darwin" ]; then
 
   # SSL Certificate file
   # export SSL_CERT_FILE="`brew --prefix curl-ca-bundle`/share/ca-bundle.crt"
@@ -35,5 +35,7 @@ else
   fi
 
   source "$HOME/.dotfiles/shells/aliases/osx"
+
+elif [ "$(uname)" = "FreeBSD" ]; then
 
 fi
