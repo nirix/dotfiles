@@ -39,3 +39,8 @@ elif [ "$(uname)" = "Darwin" ]; then
 elif [ "$(uname)" = "FreeBSD" ]; then
 
 fi
+
+# Local system only stuff
+if [[ -s "$HOME/.dotfiles/local.sh" ]]; then
+  source "$HOME/.dotfiles/local.sh"
+fi
