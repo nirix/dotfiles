@@ -13,3 +13,11 @@
     pushInsteadOf = https://github.com/
     pushInsteadOf = git://github.com/
     pushInsteadOf = gh:
+
+[url "git@bitbucket.org:"]
+    insteadOf = bb:
+    pushInsteadOf = bb:
+
+[url "git@gitlab.com:"]
+    insteadOf = gl:
+    pushInsteadOf = gl:
