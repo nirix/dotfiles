@@ -30,8 +30,6 @@ set cursorline
 " Disable parens matching.
 "let loaded_matchparen = 1
 
-let g:ctrlp_custom_ignore = {'dir': '\v[\/]\.(git|hg|svn|staging)$'}
-
 " Whitespace
 set listchars=eol:$,tab:>-,trail:*,extends:>,precedes:<
 set list
@@ -39,7 +37,8 @@ set list
 " ============================================================================
 " PLUGIN SETTINGS
 "
-let g:plug_url_format = 'git@github.com:%s.git'
+"let g:plug_url_format = 'git@github.com:%s.git'
+"let g:plug_url_format = 'https://github.com/%s.git'
 
 call plug#begin('~/.vim/plugged')
 
@@ -47,44 +46,65 @@ call plug#begin('~/.vim/plugged')
 "Plug 'elzr/vim-json'
 "Plug 'jelera/vim-javascript-syntax'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'fatih/vim-go'
-Plug 'groenewege/vim-less'
-Plug 'kchmck/vim-coffee-script'
+"Plug 'fatih/vim-go'
+"Plug 'groenewege/vim-less'
+"Plug 'kchmck/vim-coffee-script'
 Plug 'mattn/emmet-vim'
-Plug 'noprompt/vim-yardoc'
-Plug 'pangloss/vim-javascript'
-Plug 'rust-lang/rust.vim'
-Plug 'tpope/vim-haml'
-Plug 'tpope/vim-rails'
-Plug 'vim-ruby/vim-ruby'
+"Plug 'noprompt/vim-yardoc'
+"Plug 'pangloss/vim-javascript'
+"Plug 'rust-lang/rust.vim'
+"Plug 'tpope/vim-haml'
+"Plug 'tpope/vim-rails'
+"Plug 'vim-ruby/vim-ruby'
 
 " Other
+"Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
+Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'vim-scripts/tComment'
-Plug 'MarcWeber/vim-addon-mw-utils'
+"Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'Raimondi/delimitMate'
-Plug 'SirVer/ultisnips'
-Plug 'Valloric/YouCompleteMe'
+"Plug 'SirVer/ultisnips'
+"Plug 'Valloric/YouCompleteMe'
 Plug 'airblade/vim-gitgutter'
-Plug 'bling/vim-airline'
-Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'godlygeek/tabular'
-Plug 'kien/ctrlp.vim'
+"Plug 'kien/ctrlp.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'", {'on': 'SyntasticCheck'}
 Plug 'terryma/vim-multiple-cursors'
-Plug 'tomtom/tlib_vim'
-Plug 'tpope/vim-commentary'
+"Plug 'tomtom/tlib_vim'
+"Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
+" Colour schemes
+Plug 'chriskempson/vim-tomorrow-theme'
+"Plug 'chriskempson/base16-vim'
+
 call plug#end()
+
+" ctrl-p
+let g:ctrlp_custom_ignore = {'dir': '\v[\/]\.(git|hg|svn|staging)$'}
 
 " Syntastic settings.
 let g:syntastic_auto_loc_list  = 0
 let g:syntastic_stl_format     = '[%E{Errors: %e, line %fe}%B{ | }'
 let g:syntastic_stl_format    .= '%W{Warnings: %w, line %fw}]'
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+" Ignore syntax checking for Shell scripts as this is currently broken.
+let g:syntastic_mode_map = {
+  \ 'mode': 'passive',
+  \ 'active_filetypes': ['ruby', 'php', 'python', 'javascript', 'coffee', 'rust']}
+
+" Ruby linting
+let g:syntastic_ruby_checkers = ['rubylint']
 
 let g:syntastic_c_check_header          = 0
 let g:syntastic_c_compiler_options      = ' -Wextra -Wall'
@@ -93,18 +113,15 @@ let g:syntastic_c_remove_include_errors = 1
 let g:syntastic_cpp_compiler_options   = ' -Wextra -Wall -std=c++11'
 let g:syntastic_javascript_jshint_args = '--config ~/.jshint'
 
+let g:syntastic_php_checkers = ['php', 'phpcs']
+
+"set statusline=\ \"%t\"\ %y\ %m%#warningmsg#%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}%*
+
 " Airline
 set laststatus=2
-"let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-
-" Ignore syntax checking for Shell scripts as this is currently broken.
-let g:syntastic_mode_map = {
-  \ 'mode': 'passive',
-  \ 'active_filetypes': ['c', 'javascript', 'coffee', 'cpp', 'rust']}
-
-" Ruby linting
-let g:syntastic_ruby_checkers = ['rubylint']
+let g:Airlinetheme = 'tomorrow'
+let g:airline#extensions#tabline#enabled = 1
+"let g:airline_powerline_fonts = 1
 
 " UltiSnips settings.
 let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -173,7 +190,7 @@ autocmd! BufRead,BufNewFile *.rake   set filetype=ruby
 autocmd! BufRead,BufNewFile *.ru     set filetype=ruby
 autocmd! BufRead,BufNewFile *.rs     set filetype=rust
 autocmd! BufRead,BufNewFile *.rll    set filetype=rll
-autocmd! BufRead,BufNewFile *.phtml  set filetype=html
+"autocmd! BufRead,BufNewFile *.phtml  set filetype=html
 
 " Taken from http://vim.wikia.com/wiki/Highlight_unwanted_spaces
 autocmd BufWinEnter * match Visual /\s\+$/
@@ -196,6 +213,8 @@ autocmd! FileType rust   setlocal tw=80
 "
 map <F5> :SyntasticCheck<CR><Esc>
 map <c-d> :NERDTreeToggle<CR><Esc>
+map bn :bn<CR>
+map bp :bp<CR>
 
 " ============================================================================
 " HOST SPECIFIC CONFIGURATION
