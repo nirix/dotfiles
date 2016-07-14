@@ -19,20 +19,3 @@ alias xbundle="rbx -S bundle"
 alias xrake="rbx -S rake"
 alias xrails="rbx -S rails"
 alias xpuma="rbx -S puma"
-
-# MariaDB
-alias mdbstart="mysql.server start"
-alias mdbstop="mysql.server stop"
-
-# PostgreSQL
-alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
-alias pgstop="pg_ctl -D /usr/local/var/postgres stop"
-
-# Apache, eh
-alias httpdstart="sudo apachectl start"
-alias httpdstop="sudo apachectl stop"
-alias httpdre="sudo apachectl restart"
-
-# Easily start/stop MySQL and Apache
-alias startserver="mdbstart; httpdstart"
-alias stopserver="mdbstop; httpdstop"

@@ -1,5 +1,6 @@
 # Sublime Text 3
-alias st="/Applications/Other/Development/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+alias subl="/Applications/Other/Development/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+alias st="subl"
 
 # Spotify control from the CLI
 alias spotify="osascript ~/.dotfiles/modules/spotify_control/SpotifyControl.scpt"
@@ -8,3 +9,21 @@ alias spotify="osascript ~/.dotfiles/modules/spotify_control/SpotifyControl.scpt
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 10'"
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
+
+# MariaDB
+alias mdbstart="mysql.server start"
+alias mdbstop="mysql.server stop"
+
+# PostgreSQL
+alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias pgstop="pg_ctl -D /usr/local/var/postgres stop"
+
+# Apache, eh
+alias httpdstart="sudo apachectl start"
+alias httpdstop="sudo apachectl stop"
+alias httpdre="sudo apachectl restart"
+alias httpdconf="subl -a /private/etc/apache2/httpd.conf"
+
+# Easily start/stop MySQL and Apache
+alias startserver="mdbstart; httpdstart"
+alias stopserver="mdbstop; httpdstop"
