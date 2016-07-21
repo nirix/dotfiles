@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#
+# Pauses all available players
+# Created by Nirix
+# https://nirix.net
+#
+
+players=`playerctl --list-all`
+
+for p in $players; do
+    playerctl pause -p $p
+done
