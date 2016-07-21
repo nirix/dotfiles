@@ -1,0 +1,59 @@
+#include "/home/jack/.local/base16/xresources/xresources/base16-default-dark-256.Xresources"
+
+! -----------------------------------------------------------------------------
+! font settings
+
+Xft.autohint: true
+Xft.antialias: true
+Xft.hinting: true
+Xft.hintstyle: hintslight
+!Xft.dpi: 96
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+
+! -----------------------------------------------------------------------------
+! urxvt
+
+URxvt.font: xft:Monospace:size=11
+URxvt.boldFont: xft:Monospace:Bold:size=11
+URxvt.letterSpace: -2
+! Add fallback fonts as laid out in `man 1 urxvt` under "font:" in the RESOURCES section
+
+! Window size and position
+!URxvt*geometry: 60x22+50+100
+! Window size, let the Window Manager position it
+URxvt.geometry: 80x28
+
+URxvt.scrollstyle: plain
+URxvt.scrollBar: true
+URxvt.scrollBar_right: true
+
+! scrollback buffer lines - 65535 is max (64 is default)
+URxvt.saveLines:16384
+
+! True Transparency, opacity percentage set in square brackets before URxvt.background colour
+URxvt.depth: 32
+
+! Clickble URLs
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/x-www-browser
+URxvt.matcher.button: 3
+
+! -----------------------------------------------------------------------------
+! URxvt colours
+! Use base16 colour with a bit of transparency
+URxvt.background: [80]base00
+
+! -----------------------------------------------------------------------------
+! ROFI colours
+! rofi.color-enabled: true
+! rofi.color-window: argb:d11d1f21, #1d1f21, #c5c8c6
+! rofi.color-normal: #282a2e, #ffffff, #373b41, #8abeb7, #282a2e
+! rofi.color-active: #282a2e, #81a2be, #373b41, #81a2be, #ffffff
+! rofi.color-urgent: #282a2e, #cc6666, #373b41, #cc6666, #ffffff
+
+rofi.color-enabled: true
+rofi.color-window: argb:d1303030, argb:d1353535, #c5c8c6
+rofi.color-normal: argb:0282a2e, #ffffff, argb:24444444, #8abeb7, #282a2e
+rofi.color-active: #282a2e, #81a2be, #373b41, #81a2be, #ffffff
+rofi.color-urgent: argb:0282a2e, #cc6666, argb:24444444, #cc6666, #ffffff
