@@ -46,14 +46,9 @@ URxvt.background: [80]base00
 
 ! -----------------------------------------------------------------------------
 ! ROFI colours
-! rofi.color-enabled: true
-! rofi.color-window: argb:d11d1f21, #1d1f21, #c5c8c6
-! rofi.color-normal: #282a2e, #ffffff, #373b41, #8abeb7, #282a2e
-! rofi.color-active: #282a2e, #81a2be, #373b41, #81a2be, #ffffff
-! rofi.color-urgent: #282a2e, #cc6666, #373b41, #cc6666, #ffffff
 
 rofi.color-enabled: true
-rofi.color-window: argb:d1303030, argb:d1353535, #c5c8c6
-rofi.color-normal: argb:0282a2e, #ffffff, argb:24444444, #8abeb7, #282a2e
-rofi.color-active: #282a2e, #81a2be, #373b41, #81a2be, #ffffff
-rofi.color-urgent: argb:0282a2e, #cc6666, argb:24444444, #cc6666, #ffffff
+rofi.color-window: argb:d1282828, argb:d1282828, #c5c8c6
+rofi.color-normal: argb:2000000, #ffffff, argb:24444444, #7cafc2, #000000
+rofi.color-active: argb:2000000, #86c1b9, argb:24444444, #86c1b9, #000000
+rofi.color-urgent: argb:2000000, #ab4642, argb:24444444, #ab4642, #ffffff
