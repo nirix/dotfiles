@@ -36,6 +36,10 @@ font pango:DejaVu Sans Mono 8
 font pango:Roboto Mono 10
 
 # -----------------------------------------------------------------------------
+
+for_window [title="Volume Control"] floating enable
+
+# -----------------------------------------------------------------------------
 # Keybindings
 
 # Use Mouse+$mod to drag floating windows to their wanted position
