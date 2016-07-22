@@ -185,6 +185,26 @@ bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- unmute && p
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ unmute && pkill -RTMIN+10 i3blocks
 
 # -----------------------------------------------------------------------------
+# Gap Controls
+mode "gaps" {
+    # Reset gaps to default
+    bindsym r gaps inner all set 10; gaps outer all set 0
+
+    # Inner
+    bindsym Up gaps inner all plus 5
+    bindsym Down gaps inner all minus 5
+
+    # Outer
+    bindsym Left gaps outer all plus 5
+    bindsym Right gaps outer all minus 5
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+g mode "gaps"
+
+# -----------------------------------------------------------------------------
 # Lock / Suspend Controls
 
 bindsym Pause exec i3lock -c 1d1f21
