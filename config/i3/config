@@ -32,8 +32,8 @@ font pango:DejaVu Sans Mono 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-# Use Roboto Mono
-font pango:Roboto Mono 10
+# Use Roboto
+font pango:Roboto 10
 
 # -----------------------------------------------------------------------------
 
