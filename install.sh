@@ -14,7 +14,7 @@ function linkfile {
     mv "$HOME/$1" "$HOME/$1.back"
   fi
 
-  ln -s "$HOME/.dotfiles/$1" "$HOME/.$1"
+  ln -s "$HOME/.dotfiles/config/global/$1" "$HOME/.$1"
 }
 
 function install {
@@ -24,10 +24,11 @@ function install {
   linkfile 'gvimrc'
 
   # Link dot directories
-  linkfile 'vim'
+  #linkfile 'vim'
 
   # git config
-  cp gitconfig ~/.gitconfig
+  #cp gitconfig ~/.gitconfig
+  linkfile 'gitconfig'
 
   # modules
   git clone --recursive https://github.com/clvv/fasd.git shells/modules/fasd

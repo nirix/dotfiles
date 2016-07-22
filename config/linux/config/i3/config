@@ -251,6 +251,8 @@ bar {
     # i3bar position
     position top
 
+    #status_command i3status
+
     # Use conky
     #status_command ~/.config/i3/conky-i3bar.sh
 
@@ -260,12 +262,19 @@ bar {
     tray_output primary
 }
 
+#bar {
+#    status_command i3status
+#}
+
 # -----------------------------------------------------------------------------
 # Autostart
 exec compton --vsync opengl-oml
 exec nitrogen --restore
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &>/dev/null
 exec thunar --daemon
+exec --no-startup-id clipit
+exec --no-startup-id nm-applet
+exec --no-startup-id dunst
 
 # -----------------------------------------------------------------------------
 # Detect displays and force pull composition pipeline.
