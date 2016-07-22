@@ -1,0 +1,52 @@
+[global]
+  # %a = appname
+  # %s = summary
+  # %b = body / message
+  # %i = iconname with path
+  # %I = iconname without path
+  # %p = progress ([  0%] to [100%] or blank)
+  font = Roboto 10
+  allow_markup = yes
+  format = "<b>%s</b>\n%b"
+  ignore_newline = no
+  alignment = left
+  word_wrap = yes
+  line_height = 0
+
+  padding = 10
+  horizontal_padding = 12
+
+  separator_height = 2
+  separator_color = auto
+
+  # Sort messages by urgency?
+  sort = yes
+
+  # Show how many messages are currently hidden
+  indicate_hidden = yes
+
+  show_age_threshold = 60
+  geometry = "270x20-10+33"
+  transparency = 20
+
+  idle_threshold = 999
+  follow = mouse
+
+[frame]
+  width = 0
+  color = "#ffffff"
+
+[urgency_low]
+  background = "#373b41"
+  foreground = "#ffffff"
+  timeout = 5
+ 
+[urgency_normal]
+  background = "#f0c674"
+  foreground = "#1d1f21"
+  timeout = 
+ 
+[urgency_critical]
+  background = "#cc6666"
+  foreground = "#ffffff"
+  timeout = 10
