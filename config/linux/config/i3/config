@@ -185,6 +185,11 @@ bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- unmute && p
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ unmute && pkill -RTMIN+10 i3blocks
 
 # -----------------------------------------------------------------------------
+# Network controls
+
+bindsym $mod+n exec nmcli_dmenu
+
+# -----------------------------------------------------------------------------
 # Gap Controls
 mode "gaps" {
     # Reset gaps to default
