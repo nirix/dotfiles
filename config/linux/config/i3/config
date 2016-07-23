@@ -226,6 +226,7 @@ new_window 1pixel
 
 set $transparent #00000000
 set $c_base00    #1d1f21
+set $status_bg   #1d1f21d1
 
 # base16-tomorrow-dark based colours
 #client.focused #81a2be #81a2be #ffffff #8abeb7 #81a2be
@@ -239,19 +240,20 @@ client.focused_inactive #1d1f21 #1d1f21 #c5c8c6 #282a2e #1d1f21
 bar {
     colors {
         # Whole color settings
-        background $c_base00
         statusline #ffffff
+        #background $c_base00
+        background $status_bg
         separator  #ffffff
 
-        # Type             border    background font
-        focused_workspace  $c_base00 $c_base00  #cf6a4c
-        active_workspace   $c_base00 $c_base00  #cf6a4c
-        inactive_workspace $c_base00 $c_base00  #888888
-        urgent_workspace   #aa0000   #990000    #ffffff
+        # Type             border     background font
+        focused_workspace  $status_bg $status_bg #cf6a4c
+        active_workspace   $status_bg $status_bg #cf6a4c
+        inactive_workspace $status_bg $status_bg #888888
+        urgent_workspace   #aa0000    #990000    #ffffff
     }
 
     # Enable transparency
-    #i3bar_command i3bar -t
+    i3bar_command i3bar -t
 
     # i3bar position
     position top
@@ -264,7 +266,7 @@ bar {
     # Use i3blocks
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
 
-    tray_output primary
+    tray_output none
 }
 
 #bar {
