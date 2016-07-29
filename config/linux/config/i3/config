@@ -33,7 +33,8 @@ font pango:DejaVu Sans Mono 8
 # font, it doesn’t scale on retina/hidpi displays.
 
 # Use Roboto
-font pango:Roboto 10
+#font pango:Roboto 10
+font pango:Roboto 10, FontAwesome 10
 
 # -----------------------------------------------------------------------------
 
