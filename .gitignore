@@ -2,3 +2,4 @@
 local.sh
 shells/modules/fasd
 shells/modules/prezto
+shells/modules/oh-my-zsh

@@ -1,0 +1,6 @@
+# Source Prezto.
+if [[ -s "$HOME/.dotfiles/shells/modules/prezto/init.zsh" ]]; then
+  source "$HOME/.dotfiles/shells/modules/prezto/init.zsh"
+fi
+
+source $HOME/.dotfiles/shells/zsh/common

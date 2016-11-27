@@ -24,7 +24,7 @@ if [ -f "$HOME/.zshrc" ]; then
     mv "$HOME/.zshrc" "$HOME/.zshrc.back"
   fi
 fi
-ln -s "$HOME/.dotfiles/shells/zsh/zshrc" "$HOME/.zshrc"
+ln -s "$HOME/.dotfiles/shells/zsh/prezto/zshrc" "$HOME/.zshrc"
 
 # Prezto
 if [ -f "$HOME/.zpreztorc" ]; then
@@ -34,4 +34,4 @@ if [ -f "$HOME/.zpreztorc" ]; then
     mv "$HOME/.zpreztorc" "$HOME/.zpreztorc.back"
   fi
 fi
-ln -nfs "$HOME/.dotfiles/shells/zsh/zpreztorc" "$HOME/.zpreztorc"
+ln -nfs "$HOME/.dotfiles/shells/zsh/prezto/zpreztorc" "$HOME/.zpreztorc"
