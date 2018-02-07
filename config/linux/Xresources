@@ -14,9 +14,9 @@ Xft.lcdfilter: lcddefault
 ! -----------------------------------------------------------------------------
 ! urxvt
 
-URxvt.font: xft:Monospace:size=11,xft:DejaVu Sans Mono:size=11
-URxvt.boldFont: xft:Monospace:Bold:size=11,xft:DejaVu Sans Mono:Bold:size=11
-URxvt.letterSpace: -2
+URxvt.font: xft:Hack:Regular:size=11,xft:DejaVu Sans Mono:size=11
+URxvt.boldFont: xft:Hack:Bold:size=11,xft:DejaVu Sans Mono:Bold:size=11
+!URxvt.letterSpace: -2
 ! Add fallback fonts as laid out in `man 1 urxvt` under "font:" in the RESOURCES section
 
 ! Window size and position
@@ -42,7 +42,10 @@ URxvt.matcher.button: 1
 ! -----------------------------------------------------------------------------
 ! URxvt colours
 ! Use base16 colour with a bit of transparency
-URxvt.background: [80]base00
+!URxvt.background: [80]base00
+!URxvt.background: rgba:0029/0031/0033/0c80
+URxvt.background: [80]#181818
+!URxvt.background: base00
 
 ! -----------------------------------------------------------------------------
 ! ROFI colours
@@ -50,6 +53,6 @@ URxvt.background: [80]base00
 rofi.font: Roboto Mono 10
 rofi.color-enabled: true
 rofi.color-window: argb:d1282828, argb:d1282828, #c5c8c6
-rofi.color-normal: argb:2000000, #ffffff, argb:24444444, #7cafc2, #000000
-rofi.color-active: argb:2000000, #86c1b9, argb:24444444, #86c1b9, #000000
-rofi.color-urgent: argb:2000000, #ab4642, argb:24444444, #ab4642, #ffffff
+rofi.color-normal: argb:20000000, #ffffff, argb:24444444, #7cafc2, #000000
+rofi.color-active: argb:20000000, #86c1b9, argb:24444444, #86c1b9, #000000
+rofi.color-urgent: argb:20000000, #ab4642, argb:24444444, #ab4642, #ffffff
