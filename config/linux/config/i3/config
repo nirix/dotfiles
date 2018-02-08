@@ -40,6 +40,7 @@ font pango:Roboto 10, FontAwesome 10
 
 for_window [title="Volume Control"] floating enable
 for_window [class="VirtualBox"] floating enable
+for_window [class="Plank"] floating enable
 
 # -----------------------------------------------------------------------------
 # Keybindings
@@ -233,12 +234,23 @@ set $transparent #00000000
 set $c_base00    #1d1f21
 set $status_bg   #1d1f21d1
 
+set_from_resource $primary     color4  #b8b8b8
+set_from_resource $primary-alt color6  #8abeb7
+
+set_from_resource $border_active       color4  #b8b8b8
+set_from_resource $border_active_alt   color6  #8abeb7
+set_from_resource $border_inactive     color8  #969896
+set_from_resource $border_inactive_alt color8  #969896
+
+client.focused          $border_active   $border_active   #c5c8c6 $border_active_alt   $border_active
+client.focused_inactive $border_inactive $border_inactive #c5c8c6 $border_inactive_alt $border_inactive
+
 # base16-tomorrow-dark based colours
 #client.focused #81a2be #81a2be #ffffff #8abeb7 #81a2be
-client.focused #373b41 #373b41 #c5c8c6 #81a2be #373b41
+#client.focused #373b41 #373b41 #c5c8c6 #81a2be #373b41
 #client.focused #969896 #969896 #ffffff #b4b7b4 #969896
 #client.focused_inactive #282a2e #282a2e #c5c8c6 #373b41 #282a2e
-client.focused_inactive #1d1f21 #1d1f21 #c5c8c6 #282a2e #1d1f21
+#client.focused_inactive #1d1f21 #1d1f21 #c5c8c6 #282a2e #1d1f21
 
 # -----------------------------------------------------------------------------
 # Start i3bar to display a workspace bar
@@ -282,13 +294,20 @@ exec_always --no-startup-id $HOME/.config/i3/polybar.sh
 
 # -----------------------------------------------------------------------------
 # Autostart
+
+# Compositor, wallpaper and filemanager
 exec compton --vsync opengl-oml
 exec nitrogen --restore
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &>/dev/null
 exec thunar --daemon
+
+# Clipboard, NetworkManager Applet and Notifications
 exec --no-startup-id clipit
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
+
+# Gnome
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &>/dev/null
+exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,gpg,secrets
 
 # -----------------------------------------------------------------------------
 # Detect displays and force pull composition pipeline.
