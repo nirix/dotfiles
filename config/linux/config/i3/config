@@ -218,8 +218,8 @@ bindsym $mod+g mode "gaps"
 # -----------------------------------------------------------------------------
 # Lock / Suspend Controls
 
-bindsym Pause exec i3lock -c 1d1f21
-bindsym $mod+Pause exec i3lock -c 1d1f21 && systemctl suspend
+bindsym Pause exec $HOME/.config/i3/lock.sh
+bindsym $mod+Pause exec $HOME/.config/i3/lock.sh && systemctl suspend
 
 # -----------------------------------------------------------------------------
 # GAPS :D
