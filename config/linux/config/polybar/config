@@ -75,7 +75,23 @@ module-margin-right = 0
 
 font-0 = PowerlineSymbols:size=17;4
 font-1 = Roboto:size=10;2
-font-2 = FontAwesome:size=10;2
+
+; Solid
+font-2 = Font Awesome 5 Free:style=Solid:size=10;2
+font-3 = Font Awesome 5 Pro:style=Solid:size=10;2
+
+; Regular
+font-4 = Font Awesome 5 Free:style=Regular:size=10;2
+font-5 = Font Awesome 5 Pro:style=Regular:size=10;2
+
+; Light
+font-6 = Font Awesome 5 Free:style=Light:size=10;2
+font-7 = Font Awesome 5 Pro:style=Light:size=10;2
+
+; Brands
+font-8 = Font Awesome 5 Brands:size=10;2
+
+;font-2 = FontAwesome:size=10;2
 ;font-3 = Roboto:size=18;0
 ;font-4 = Roboto:size=28;3
 ;font-5 = FontAwesome:size=26;7
@@ -330,7 +346,7 @@ label-song-ellipsis = true
 type = internal/memory
 interval = 1
 
-format-prefix = "  "
+format-prefix = "   "
 ;format-prefix = ram
 ;format-foreground = ${colors.foreground-dark}
 format-margin-top = -5
@@ -392,21 +408,14 @@ type = internal/network
 interface = net1
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %essid%
+label-connected = "  %{T3}%{T-} %downspeed:8%   %{T3}%{T-} %upspeed:8%  "
+label-connected-foreground = ${colors.foreground-alt}
+label-connected-background = ${colors.background-alt}
+label-connected-padding = 1
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 = "%{T7}%{T-}"
+ramp-signal-1 = "%{T5}%{T-}"
+ramp-signal-2 = "%{T3}%{T-}"
 ramp-signal-foreground = ${colors.foreground-alt}
 
 ;##########################################################
@@ -420,7 +429,7 @@ interval = 3.0
 
 format-connected-background = ${colors.background}
 
-label-connected = "%{T4}%{T-} %downspeed:8% | %{T4}%{T-} %upspeed:8%  "
+label-connected = "%{T3}%{T-} %downspeed:8%   %{T3}%{T-} %upspeed:8%  "
 label-connected-foreground = ${colors.foreground-alt}
 label-connected-background = ${colors.background-alt}
 label-connected-padding = 1
@@ -471,7 +480,7 @@ date = " %A, %d %B %Y"
 time = %I:%M%p
 ;time-alt = %H:%M:%S
 
-;format-prefix = " "
+format-prefix = "%{T7}%{T-} "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = ;#0a6cf5
 format-foreground = ${colors.foreground-alt}
