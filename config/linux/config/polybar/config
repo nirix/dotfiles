@@ -266,7 +266,7 @@ format-mounted-background = ${colors.background-alt}
 ;   
 label-mounted = "  %percentage_used%%  "
 ; %free%% %percentage_used%% %used%
-label-mounted-foreground = ${colors.foreground-dark}
+label-mounted-foreground = ${colors.foreground-alt}
 label-unmounted =   %mountpoint%
 label-unmounted-foreground = ${colors.color2}
 
@@ -353,7 +353,7 @@ interval = 1
 
 format-prefix = "   "
 ;format-prefix = ram
-;format-foreground = ${colors.foreground-dark}
+;format-foreground = ${colors.foreground-alt}
 format-margin-top = -5
 
 format-foreground = ${colors.foreground-alt}
@@ -461,15 +461,15 @@ label-warn = "%temperature%  "
 label-warn-foreground = ${colors.alert}
 
 ramp-0 = "  "
-ramp-0-foreground = ${colors.foreground-light}
+ramp-0-foreground = ${colors.foreground}
 ramp-1 = "  "
-ramp-1-foreground = ${colors.foreground-light}
+ramp-1-foreground = ${colors.foreground}
 ramp-2 = "  "
-ramp-2-foreground = ${colors.foreground-light}
+ramp-2-foreground = ${colors.foreground}
 ramp-3 = "  "
-ramp-3-foreground = ${colors.foreground-light}
+ramp-3-foreground = ${colors.foreground}
 ramp-4 = "  "
-ramp-4-foreground = ${colors.foreground-light}
+ramp-4-foreground = ${colors.foreground}
 
 ;##########################################################
 ;           Date
