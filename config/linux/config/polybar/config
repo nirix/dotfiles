@@ -96,7 +96,7 @@ font-8 = Font Awesome 5 Brands:size=10;2
 ;font-4 = Roboto:size=28;3
 ;font-5 = FontAwesome:size=26;7
 
-modules-left = i3 rightArrowLight
+modules-left = i3 bspwm rightArrowLight
 modules-center = 
 modules-right = leftArrowLight filesystem leftArrowDark volume leftArrowLight memory leftArrowDark cpu leftArrowLight eth leftArrowDark temperature leftArrowLight date leftArrowDark powermenu leftArrowLight
 
@@ -163,12 +163,15 @@ content-background = ${colors.color0}
 type = internal/bspwm
 
 label-focused = %index%
-label-focused-background = ${colors.background}
-label-focused-underline= ${colors.primary}
+label-focused-background = ${colors.background-alt}
+label-focused-foreground = ${colors.primary}
+label-focused-underline= 
+;${colors.primary}
 label-focused-padding = 2
 
 label-occupied = %index%
 label-occupied-padding = 2
+label-occupied-background = ${colors.background-alt}
 
 label-urgent = %index%!
 label-urgent-background = ${colors.alert}
@@ -176,6 +179,7 @@ label-urgent-padding = 2
 
 label-empty = %index%
 label-empty-foreground = ${colors.foreground-alt}
+label-empty-background = ${colors.background-alt}
 label-empty-padding = 2
 
 ;##########################################################
@@ -207,6 +211,7 @@ label-focused-padding = ${module/bspwm.label-focused-padding}
 label-unfocused = %index%
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 label-unfocused-background = ${colors.background-alt}
+label-unfocused-foreground = ${colors.foreground-alt}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
@@ -372,18 +377,18 @@ format-volume = <ramp-volume> <label-volume>
 ;      
 
 label-volume = "%percentage%%  "
-label-volume-foreground = ${colors.foreground-dark}
+label-volume-foreground = ${colors.foreground}
 label-muted = "   MUTE"
-label-muted-foreground = ${colors.foreground-dark}
+label-muted-foreground = ${colors.foreground}
 
 ramp-volume-0 = "  "
-ramp-volume-0-foreground = ${colors.foreground-light}
+ramp-volume-0-foreground = ${colors.foreground}
 ramp-volume-1 = "  "
-ramp-volume-1-foreground = ${colors.foreground-light}
+ramp-volume-1-foreground = ${colors.foreground}
 ramp-volume-2 = "  "
-ramp-volume-2-foreground = ${colors.foreground-light}
+ramp-volume-2-foreground = ${colors.foreground}
 ramp-volume-3 = "  "
-ramp-volume-3-foreground = ${colors.foreground-light}
+ramp-volume-3-foreground = ${colors.foreground}
 
 bar-volume-width = 10
 bar-volume-color2 = #495858
@@ -503,11 +508,11 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
 label-open = "    "
-label-open-foreground = ${colors.foreground-dark}
+label-open-foreground = ${colors.foreground}
 label-close = "  cancel " 
-label-close-foreground = ${colors.foreground-dark}
+label-close-foreground = ${colors.foreground}
 label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
+label-separator-foreground = ${colors.foreground}
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
