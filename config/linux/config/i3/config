@@ -114,6 +114,12 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -197,9 +203,11 @@ bindsym $mod+n exec nmcli_dmenu
 
 # -----------------------------------------------------------------------------
 # Gap Controls
+set $gap_size 10
+
 mode "gaps" {
     # Reset gaps to default
-    bindsym r gaps inner all set 10; gaps outer all set 0
+    bindsym r gaps inner all set $gap_size; gaps outer all set 0
 
     # Inner
     bindsym Up gaps inner all plus 5
@@ -223,8 +231,8 @@ bindsym $mod+Pause exec $HOME/.config/i3/lock.sh && systemctl suspend
 
 # -----------------------------------------------------------------------------
 # GAPS :D
-gaps inner 10
-new_window 1pixel
+gaps inner $gap_size
+new_window pixel 2
 #new_window none
 
 # -----------------------------------------------------------------------------
@@ -296,7 +304,8 @@ exec_always --no-startup-id $HOME/.config/i3/polybar.sh
 # Autostart
 
 # Compositor, wallpaper and filemanager
-exec compton --vsync opengl-oml
+#exec compton --vsync opengl-oml
+exec compton
 exec nitrogen --restore
 exec thunar --daemon
 
