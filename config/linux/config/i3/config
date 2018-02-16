@@ -245,8 +245,8 @@ set $status_bg   #1d1f21d1
 set_from_resource $primary     color1  #b8b8b8
 set_from_resource $primary-alt color2  #8abeb7
 
-set_from_resource $border_active       color1  #b8b8b8
-set_from_resource $border_active_alt   color2  #8abeb7
+set_from_resource $border_active       color4  #b8b8b8
+set_from_resource $border_active_alt   color6  #8abeb7
 set_from_resource $border_inactive     color0  #969896
 set_from_resource $border_inactive_alt color0  #969896
 

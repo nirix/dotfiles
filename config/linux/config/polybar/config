@@ -42,7 +42,7 @@ foreground-alt-active = ${self.color15}
 
 ; Background
 background     = ${self.color0}
-background-alt = ${self.color2}
+background-alt = ${self.color8}
 
 ;foreground-light = ${self.color20}
 ;foreground-dark  = ${self.color21}
