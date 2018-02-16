@@ -242,13 +242,13 @@ set $transparent #00000000
 set $c_base00    #1d1f21
 set $status_bg   #1d1f21d1
 
-set_from_resource $primary     color4  #b8b8b8
-set_from_resource $primary-alt color6  #8abeb7
+set_from_resource $primary     color1  #b8b8b8
+set_from_resource $primary-alt color2  #8abeb7
 
-set_from_resource $border_active       color4  #b8b8b8
-set_from_resource $border_active_alt   color6  #8abeb7
-set_from_resource $border_inactive     color8  #969896
-set_from_resource $border_inactive_alt color8  #969896
+set_from_resource $border_active       color1  #b8b8b8
+set_from_resource $border_active_alt   color2  #8abeb7
+set_from_resource $border_inactive     color0  #969896
+set_from_resource $border_inactive_alt color0  #969896
 
 client.focused          $border_active   $border_active   #c5c8c6 $border_active_alt   $border_active
 client.focused_inactive $border_inactive $border_inactive #c5c8c6 $border_inactive_alt $border_inactive
