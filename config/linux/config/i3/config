@@ -41,6 +41,9 @@ font pango:Roboto 10, FontAwesome 10
 for_window [title="Volume Control"] floating enable
 for_window [class="VirtualBox"] floating enable
 for_window [class="Plank"] floating enable
+for_window [class="Oomox"] floating enable
+for_window [class="Lxappearance"] floating enable
+for_window [class="Nitrogen"] floating enable
 
 # -----------------------------------------------------------------------------
 # Keybindings
