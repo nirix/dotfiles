@@ -37,12 +37,12 @@ alert     = ${self.color3}
 
 ; Foreground
 foreground     = ${self.color7}
-foreground-alt = ${self.color0}
-foreground-alt-active = ${self.color7}
+foreground-alt = ${self.color7}
+foreground-alt-active = ${self.color4}
 
 ; Background
 background     = ${self.color0}
-background-alt = ${self.color1}
+background-alt = ${self.color18}
 
 ;##########################################################
 ;           Top bar
@@ -77,7 +77,7 @@ module-margin-right = 0
 ;##########################################################
 
 font-0 = Roboto:size=10;2
-font-1 = PowerlineSymbols:size=25;6
+font-1 = PowerlineSymbols:size=20;4
 
 ; Solid
 font-2 = Font Awesome 5 Free:style=Solid:size=10;2

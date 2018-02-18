@@ -251,8 +251,8 @@ set_from_resource $primary-alt color2  #8abeb7
 set_from_resource $foreground  color7  #b8b8b8
 set_from_resource $background  color0  #b8b8b8
 
-set_from_resource $border_active       color1  #b8b8b8
-set_from_resource $border_active_alt   color1  #8abeb7
+set_from_resource $border_active       color4  #b8b8b8
+set_from_resource $border_active_alt   color4  #8abeb7
 set_from_resource $border_inactive     color19  #969896
 set_from_resource $border_inactive_alt color19  #969896
 
