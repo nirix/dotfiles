@@ -50,7 +50,7 @@ URxvt.background: [80]#181818
 ! -----------------------------------------------------------------------------
 ! ROFI colours
 
-rofi.font: Roboto Mono 10
+rofi.font: Roboto 10
 rofi.color-enabled: true
 rofi.color-window: argb:d1282828, argb:d1282828, #c5c8c6
 rofi.color-normal: argb:20000000, #ffffff, argb:24444444, #7cafc2, #000000
