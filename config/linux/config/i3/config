@@ -305,9 +305,9 @@ exec_always --no-startup-id $HOME/.config/i3/polybar.sh
 
 # Compositor, wallpaper and filemanager
 #exec compton --vsync opengl-oml
-exec compton
-exec nitrogen --restore
-exec thunar --daemon
+exec --no-startup-id compton
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id thunar --daemon
 
 # Clipboard, NetworkManager Applet and Notifications
 exec --no-startup-id clipit
@@ -315,8 +315,11 @@ exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 
 # Gnome
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &>/dev/null
+#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &>/dev/null
 exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,gpg,secrets
+
+# Xfce
+exec --no-startup-id xfsettingsd
 
 # -----------------------------------------------------------------------------
 # Detect displays and force pull composition pipeline.
