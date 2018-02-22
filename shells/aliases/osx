@@ -27,3 +27,8 @@ alias httpdconf="subl -a /private/etc/apache2/httpd.conf"
 # Easily start/stop MySQL and Apache
 alias startserver="mdbstart; httpdstart"
 alias stopserver="mdbstop; httpdstop"
+
+# PHP-FPM
+alias php56start="php56-fpm start"
+alias php56stop="php56-fpm stop"
+alias php56re="php56-fpm restart"

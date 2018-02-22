@@ -1,4 +1,4 @@
-PROMPT='%{$fg[red]%}%n%f%b %{$fg[cyan]%}%~%{$reset_color%} $(git_super_status)
+PROMPT='%{$fg_bold[red]%}%n%f%b %{$fg[cyan]%}%~%{$reset_color%} $(git_super_status)
 %{$reset_color%}%f> '
 RPROMPT=''
 

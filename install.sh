@@ -24,7 +24,7 @@ function install {
   linkfile 'gvimrc'
 
   # Link dot directories
-  linkfile 'vim'
+  ln -s $HOME/.dotfiles/vim $HOME/.vim
 
   # git config
   cp config/global/gitconfig ~/.gitconfig
@@ -35,11 +35,15 @@ function install {
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   #git clone --recursive  https://github.com/gmarik/vundle.git vim/bundle/vundle
 
+  # Link fasd
+  mkdir -c $HOME/.local/bin
+  ln -s $HOME/.dotfiles/shells/modules/fasd/fasd $HOME/.local/bin/fasd
+
   echo ".files installed"
 }
 
 if [ $SHELL = "zsh" ]; then
-  zsh shells/zsh/oh-my-zsh/install.zsh
+  zsh shells/zsh/install.zsh
 elif [ $SHELL = "bash" ]; then
   bash shells/bash/install.bash
 fi

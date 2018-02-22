@@ -8,10 +8,10 @@ if [ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ]; then
   fi
 fi
 
-setopt EXTENDED_GLOB
-for rcfile in $HOME/.dotfiles/shells/modules/prezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "$HOME/.${rcfile:t}"
-done
+# setopt EXTENDED_GLOB
+# for rcfile in $HOME/.dotfiles/shells/modules/prezto/runcoms/^README.md(.N); do
+#   ln -s "$rcfile" "$HOME/.${rcfile:t}"
+# done
 
 #####################################################
 # Backup/remove original then copy custom dot files

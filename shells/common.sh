@@ -3,13 +3,13 @@ source "$HOME/.dotfiles/shells/aliases/general"
 
 # Path
 # Add the .local/bin and .dotfiles/bin directories
-export PATH=$HOME/.dotfiles/bin:$HOME/.local/bin:$HOME/.local/npm/bin:$PATH
+export PATH=$HOME/.dotfiles/bin:$HOME/.local/bin:$HOME/.composer/vendor/bin:/opt/chefdk/bin:$HOME/.local/npm/bin:$PATH
 
 # Editor
 export EDITOR=vim
 
 # Load fasd
-alias fasd="$HOME/.dotfiles/shells/modules/fasd/fasd"
+# alias fasd="$HOME/.dotfiles/shells/modules/fasd/fasd"
 eval "$(fasd --init auto)"
 
 # Linux, OS X or FreeBSD?
