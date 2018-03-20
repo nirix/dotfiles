@@ -1,5 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 sxhkd &
-
-bspwm.sh
+$HOME/.config/bspwm/bspwm.sh

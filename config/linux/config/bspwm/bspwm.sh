@@ -4,9 +4,9 @@ xresource() {
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
-bpsc config normal_border_color $(xresource color8)
-bpsc config active_border_color $(xresource color6)
-bpsc config focused_border_color $(xresource color4)
+bspc config normal_border_color $(xresource color8)
+bspc config active_border_color $(xresource color6)
+bspc config focused_border_color $(xresource color4)
 
 # Focus follows mouse
 bspc config focus_follows_pointer true
@@ -17,6 +17,10 @@ bspc config window_gap          12
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
+
+nitrogen --restore &
+polybar top &
+compton &
 
 #bspc rule -a Gimp desktop='^8' state=floating follow=on
 #bspc rule -a Chromium desktop='^2'
