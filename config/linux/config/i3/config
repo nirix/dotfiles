@@ -319,7 +319,7 @@ exec --no-startup-id dunst
 exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,gpg,secrets
 
 # Xfce
-exec --no-startup-id xfsettingsd
+#exec --no-startup-id xfsettingsd
 
 # -----------------------------------------------------------------------------
 # Detect displays and force pull composition pipeline.
