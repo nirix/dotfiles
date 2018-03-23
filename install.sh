@@ -48,4 +48,10 @@ elif [ $SHELL = "bash" ]; then
   bash shells/bash/install.bash
 fi
 
+read -p "What OS? [linux/osx]" $OS
+
+if [ $OS = "linux" ]; then
+  bash config/link_linux.sh
+fi
+
 install
