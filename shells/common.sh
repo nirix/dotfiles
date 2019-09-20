@@ -4,6 +4,7 @@ source "$HOME/.dotfiles/shells/aliases/general"
 # Path
 # Add the .local/bin and .dotfiles/bin directories
 export PATH=$HOME/.dotfiles/bin:$HOME/.local/bin:$HOME/.composer/vendor/bin:/opt/chefdk/bin:$HOME/.local/npm/bin:$PATH
+export PATH="$HOME/.symfony/bin:$PATH"
 
 # Editor
 export EDITOR=vim
@@ -21,7 +22,7 @@ if [ "$(uname)" = "Linux" ]; then
     source /usr/share/chruby/auto.sh
   fi
 
-  # source "$HOME/.dotfiles/aliases/linux"
+  source "$HOME/.dotfiles/shells/aliases/linux"
 
 elif [ "$(uname)" = "Darwin" ]; then
 
