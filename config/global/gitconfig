@@ -6,13 +6,10 @@
 [url "https://"]
     insteadOf = git://
 
-[url "https://github.com/"]
-    insteadOf = gh:
-
 [url "git@github.com:"]
-    pushInsteadOf = https://github.com/
-    pushInsteadOf = git://github.com/
-    pushInsteadOf = gh:
+    insteadOf = https://github.com/
+    insteadOf = git://github.com/
+    insteadOf = gh:
 
 [url "git@bitbucket.org:"]
     insteadOf = bb:
@@ -20,4 +17,9 @@
 
 [url "git@gitlab.com:"]
     insteadOf = gl:
-    pushInsteadOf = gl:
+
+[branch]
+	autosetuprebase = always
+
+[commit]
+	gpgsign = true
